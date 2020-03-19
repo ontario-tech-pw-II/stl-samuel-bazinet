@@ -142,25 +142,25 @@ int main()
 	s[9].setname("Maria");
 	s[9].setgrade(99);
 
-	list<Student> ls;
+	list<Student> c;
 	list<Student>::iterator is;
 	bool notTop = 0;
 
-	ls.push_back(s[0]);
+	c.push_back(s[0]);
 	for (int i = 1; i < 10; i++) {
-		for (is = ls.begin(); is !=ls.end(); is++) {
+		for (is = c.begin(); is !=c.end(); is++) {
 			if (is->getgrade() > s[i].getgrade()) {
-				ls.insert(is,s[i]);
+				c.insert(is,s[i]);
 				notTop = 1;
 				break;
 			}
 		}
 		if (!notTop) {
-			ls.push_back(s[i]);
+			c.push_back(s[i]);
 		}
 		notTop = 0;
 	}
-	for (is = ls.begin(); is != ls.end(); is++) {
+	for (is = c.begin(); is != c.end(); is++) {
 		cout << *is << endl;
 	}
 }
