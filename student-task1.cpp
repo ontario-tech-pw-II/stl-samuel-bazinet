@@ -120,8 +120,49 @@ Student::~Student()
 int main()
 {  
 
-	// Write your code for Task 1
-		
+	Student s[10];
+	s[0].setname("Sam");
+	s[0].setgrade(50);
+	s[1].setname("Liam");
+	s[1].setgrade(60);
+	s[2].setname("Will");
+	s[2].setgrade(40);
+	s[3].setname("George");
+	s[3].setgrade(90);
+	s[4].setname("Cassy");
+	s[4].setgrade(37);
+	s[5].setname("Mindy");
+	s[5].setgrade(25);
+	s[6].setname("Malcolm");
+	s[6].setgrade(70);
+	s[7].setname("Jessica");
+	s[7].setgrade(20);
+	s[8].setname("Ellysa");
+	s[8].setgrade(95);
+	s[9].setname("Maria");
+	s[9].setgrade(99);
+
+	list<Student> ls;
+	list<Student>::iterator is;
+	bool notTop = 0;
+
+	ls.push_back(s[0]);
+	for (int i = 1; i < 10; i++) {
+		for (is = ls.begin(); is !=ls.end(); is++) {
+			if (is->getgrade() > s[i].getgrade()) {
+				ls.insert(is,s[i]);
+				notTop = 1;
+				break;
+			}
+		}
+		if (!notTop) {
+			ls.push_back(s[i]);
+		}
+		notTop = 0;
+	}
+	for (is = ls.begin(); is != ls.end(); is++) {
+		cout << *is << endl;
+	}
 }
 
 
