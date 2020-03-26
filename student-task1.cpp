@@ -126,7 +126,7 @@ int main()
 	s[1].setname("Liam");
 	s[1].setgrade(60);
 	s[2].setname("Will");
-	s[2].setgrade(40);
+	s[2].setgrade(50);
 	s[3].setname("George");
 	s[3].setgrade(90);
 	s[4].setname("Cassy");
@@ -144,6 +144,7 @@ int main()
 
 	list<Student> c;
 	list<Student>::iterator is;
+	list<Student>::reverse_iterator ir;
 	bool notTop = 0;
 
 	c.push_back(s[0]);
@@ -160,10 +161,12 @@ int main()
 		}
 		notTop = 0;
 	}
+	cout << "Prints in ascending order: " << endl;
 	for (is = c.begin(); is != c.end(); is++) {
 		cout << *is << endl;
 	}
+	cout << endl << "Prints in descending order: " << endl;
+	for (ir = c.rbegin(); ir != c.rend(); ir++)  {
+		cout << *ir << endl;
+	}
 }
-
-
-

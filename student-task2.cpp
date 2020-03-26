@@ -8,6 +8,7 @@ using namespace std;
 int main() {
 
     ifstream fin("sample.txt");
+    ofstream fout("output2.txt");
 
     string out1;
     string out2;
@@ -25,7 +26,7 @@ int main() {
 
     set<string>::iterator i;
     for (i = c.begin(); i != c.end(); i++) {
-        cout << *i << endl;
+        fout << *i << endl;
     }
 
     return 0;

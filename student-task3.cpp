@@ -8,6 +8,8 @@ using namespace std;
 int main() {
 
     ifstream fin("sample.txt");
+    ofstream fout("output3.txt");
+
 
     string out1;
     string out2;
@@ -34,7 +36,7 @@ int main() {
     }
 
     for (i = c.begin(); i != c.end(); i++) {
-        cout << i->first << ' ' << i->second << endl; 
+        fout << i->first << ' ' << i->second << endl; 
     }
 
     return 0;
